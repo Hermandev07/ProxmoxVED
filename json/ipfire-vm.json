@@ -1,0 +1,39 @@
+{
+  "name": "IPFire VM",
+  "slug": "ipfire-vm",
+  "categories": [4],
+  "date_created": "2026-06-02",
+  "type": "vm",
+  "updateable": false,
+  "privileged": false,
+  "interface_port": null,
+  "documentation": "https://www.ipfire.org/",
+  "website": "https://www.ipfire.org/",
+  "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/ipfire.webp",
+  "description": "IPFire firewall VM installer helper for Proxmox VE.",
+  "install_methods": [
+    {
+      "type": "default",
+      "script": "vm/ipfire-vm.sh",
+      "config_path": "",
+      "resources": {
+        "cpu": 4,
+        "ram": 8192,
+        "hdd": 10,
+        "os": "Debian",
+        "version": "2.31"
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [
+    {
+      "text": "Installer prompt flow can vary between IPFire versions. If automation does not match, update the sendkey/sendlíne sequence in vm/ipfire-vm.sh.",
+      "type": "warning"
+    }
+  ]
+}
+
