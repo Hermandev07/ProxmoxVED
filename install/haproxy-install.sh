@@ -27,7 +27,6 @@ global
     maxconn 256
     user haproxy
     group haproxy
-    daemon
 
 defaults
     log     global
