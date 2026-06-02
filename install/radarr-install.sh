@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2026 tteck
 # Author: tteck (tteckster)
-# License: MIT | https://github.com/community-scripts/ProxmoxVED/raw/main/LICENSE
+# License: MIT | https://github.com/Hermandev07/ProxmoxVED/raw/main/LICENSE
 # Source: https://radarr.video/ | Github: https://github.com/Radarr/Radarr
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"

@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2026 community-scripts ORG
 # Author: MickLesk (CanbiZ)
-# License: MIT | https://github.com/community-scripts/ProxmoxVED/raw/main/LICENSE
+# License: MIT | https://github.com/Hermandev07/ProxmoxVED/raw/main/LICENSE
 
 source <(curl -fsSL "${COMMUNITY_SCRIPTS_URL:-https://git.community-scripts.org/community-scripts/ProxmoxVED/raw/branch/main}/misc/vm-core.func")
 load_functions
@@ -173,5 +173,5 @@ msg_ok "Completed successfully!\n"
 if [ "$USE_CLOUD_INIT" = "yes" ] && declare -f display_cloud_init_info >/dev/null 2>&1; then
   display_cloud_init_info "$VMID" "$HN"
 else
-  echo -e "Cloud-Init is disabled. The VM disk was resized on the Proxmox side only.\nIf the guest does not auto-expand its root filesystem after first boot, expand it manually inside the VM.\n\nMore info at https://github.com/community-scripts/ProxmoxVED/discussions/272 \n"
+  echo -e "Cloud-Init is disabled. The VM disk was resized on the Proxmox side only.\nIf the guest does not auto-expand its root filesystem after first boot, expand it manually inside the VM.\n\nMore info at https://github.com/Hermandev07/ProxmoxVED/discussions/272 \n"
 fi

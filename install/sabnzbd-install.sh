@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2026 tteck
 # Author: tteck (tteckster) | Co-Author: MickLesk (CanbiZ)
-# License: MIT | https://github.com/community-scripts/ProxmoxVED/raw/main/LICENSE
+# License: MIT | https://github.com/Hermandev07/ProxmoxVED/raw/main/LICENSE
 # Source: https://sabnzbd.org/ | Github: https://github.com/sabnzbd/sabnzbd
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
