@@ -61,5 +61,6 @@ motd_ssh
 customize
 cleanup_lxc
 
-# msg_ok "HAProxy installation complete. Rebooting container in 1 minute."
-# nohup shutdown -r +1 "Rebooting after HAProxy installation" >/dev/null 2>&1 &
+msg_info "Restarting HAProxy"
+systemctl restart haproxy.service
+msg_ok "HAProxy restarted"
