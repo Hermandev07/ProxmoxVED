@@ -1,0 +1,42 @@
+{
+  "name": "WorkAdventure",
+  "slug": "workadventure",
+  "categories": [20, 21],
+  "date_created": "2026-06-04",
+  "type": "ct",
+  "updateable": true,
+  "privileged": false,
+  "interface_port": 80,
+  "documentation": "https://github.com/workadventure/workadventure",
+  "website": "https://workadventure.org/",
+  "logo": "https://raw.githubusercontent.com/workadventure/workadventure/main/logo.png",
+  "description": "Self-hosted virtual office / map - multiplayer browser-based rooms (scaffolded LXC install).",
+  "install_methods": [
+    {
+      "type": "default",
+      "script": "ct/workadventure.sh",
+      "config_path": "/opt/workadventure/.env",
+      "resources": {
+        "cpu": 2,
+        "ram": 4096,
+        "hdd": 16,
+        "os": "Debian",
+        "version": "13"
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [
+    {
+      "text": "This is a scaffold. Upstream has multiple services (DB, Redis, TURN). Adjust services and ports as needed.",
+      "type": "info"
+    },
+    {
+      "text": "Some WebRTC/media components may require privileged container features or host capability mapping. Consider var_unprivileged=0 if you encounter issues.",
+      "type": "warning"
+    }
+  ]
+}
