@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVED/main/misc/build.func)
 # Copyright (c) 2021-2026 community-scripts ORG
-# Author: BLACKBOXAI
+# Author: Hermandev07
 # License: MIT | https://github.com/community-scripts/ProxmoxVED/raw/main/LICENSE
 # Source: https://github.com/workadventure/workadventure
 
@@ -43,7 +43,7 @@ function update_script() {
     CLEAN_INSTALL=1 fetch_and_deploy_gh_release "workadventure" "workadventure/workadventure" "tarball"
 
     msg_info "Rebuilding WorkAdventure (Patience)"
-    cd /opt/workadventure
+    cd /opt/workadventure || exit
 
     if [[ -f package.json ]]; then
       $STD rm -rf play node_modules libs
@@ -54,7 +54,8 @@ function update_script() {
     # Build targets similar to provided Dockerfile fragments.
     # Keep this best-effort; upstream repo layout may vary between releases.
     if [[ -d play ]]; then
-      cd play
+      cd play || exit
+
       $STD npm run -s typesafe-i18n || true
       $STD npm run -s build-iframe-api || true
       $STD npm run -s build || true

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # Copyright (c) 2021-2026 community-scripts ORG
-# Author: BLACKBOXAI
+# Author: Hermandev07
 # License: MIT | https://github.com/community-scripts/ProxmoxVED/raw/main/LICENSE
 # Source: https://github.com/workadventure/workadventure
 
-source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
+source <(cat "$FUNCTIONS_FILE_PATH")
 color
 verb_ip6
 catch_errors
@@ -27,36 +27,36 @@ msg_info "Installing WorkAdventure (sources)"
 fetch_and_deploy_gh_release "workadventure" "workadventure/workadventure" "tarball"
 
 msg_info "Configuring Node workspaces"
-cd /opt/workadventure
-$STD npm ci || $STD npm install
+  cd /opt/workadventure || exit
+  $STD npm ci || $STD npm install
 
 # Build subprojects if present (mirrors the provided Dockerfile fragments concept)
 if [[ -d play ]]; then
   msg_info "Building Play"
-  cd play
+  cd play || exit
   $STD npm run -s typesafe-i18n || true
   $STD npm run -s build-iframe-api || true
   $STD npm run -s build || true
-  cd ..
+  cd .. || exit
   msg_ok "Built Play"
 fi
 
 if [[ -d back ]]; then
   msg_info "Building Back"
-  cd back
+  cd back || exit
   $STD npm install -s || true
   $STD npm run -s runprod || $STD npm run -s build || true
-  cd ..
+  cd .. || exit
   msg_ok "Built Back"
 fi
 
 if [[ -d map-storage ]]; then
   msg_info "Building Map Storage UI"
-  cd map-storage
+  cd map-storage || exit
   $STD npm install -s || true
   $STD npm run -s front:build || true
   $STD npm run -s build || true
-  cd ..
+  cd .. || exit
   msg_ok "Built Map Storage"
 fi
 
